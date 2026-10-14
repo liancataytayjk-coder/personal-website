@@ -8,6 +8,8 @@
  *   - Keep the quotes and commas. Each item in a list ends with a comma.
  *   - To hide a section, set its array to [] (an empty list).
  *   - Dates are plain text, so write them however you like.
+ *   - Each section has its own animal. To swap one, change the
+ *     data-mascot="..." attribute on its tile in index.html.
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -19,6 +21,15 @@ window.SITE = {
   tagline:
     "I'm building a career with intention: learning in public, shipping meaningful work, and getting a little better every week.",
   email: "liancataytayjk@gmail.com",
+  // The big title at the top of the home page.
+  masthead: "Writing, Work & Growth",
+  // The short note under the title, with a tiny animal beside it.
+  notice: {
+    bold: "Hello there",
+    text: "you've found my corner of the internet. Start with my latest post, or look around.",
+    linkText: "Read the latest post »",
+    link: "#/writing",
+  },
   // Put a resume PDF at assets/resume.pdf, or set this to "" to hide the button.
   resumeUrl: "",
   // Put a photo at assets/img/profile.jpg, or leave "" to show your initials.
@@ -138,13 +149,95 @@ window.SITE = {
     },
   ],
 
-  // ── Projects ──────────────────────────────────────────────
+  // ── Writing (your blog) ──────────────────────────────────
+  // Newest first. The first post is featured on the home page.
+  //
+  // To add a post, copy one of the { ... } blocks below, paste it at the top
+  // of the list, and change the text. Give each post a unique `slug`: it
+  // becomes the web address, e.g. yoursite.com/#/writing/my-first-post
+  //
+  // In `body`, each item in the list is one paragraph. A few shortcuts:
+  //   "## A heading"            → a section heading
+  //   "> A quote"               → a pull quote
+  //   "- A point"               → a bullet point
+  //   "![Description](assets/img/photo.jpg)" → an image
+  //   **bold**, *italic*, and [link text](https://example.com) work inside paragraphs.
+  //
+  // Optional: `mascot` and `color` pick the animal and tile color for the post.
+  //   mascots: fox, crow, turtle, giraffe, penguin, snail, bear, pigeon
+  //   colors:  lavender, pink, green, yellow, blue, mint, peach
+  posts: [
+    {
+      slug: "hello-world",
+      title: "Hello, world: why I started this site",
+      date: "October 14, 2026",
+      summary: "A short note on why I'm writing in public, and what you can expect to find here.",
+      tags: ["Meta"],
+      mascot: "crow",
+      color: "pink",
+      body: [
+        "This is your first blog post. Replace this text with your own words. A good first post explains **why** the site exists and **who** it's for.",
+        "## What I'll write about",
+        "- What I'm learning, and the mistakes I make along the way",
+        "- Write-ups of projects, with the thinking behind them",
+        "- Notes on books, ideas, and people who inspire me",
+        "> Writing is thinking. To write well is to think clearly.",
+        "Keep posts short at first. A few honest paragraphs, published, beat a perfect essay sitting in your drafts.",
+      ],
+    },
+    {
+      slug: "what-i-learned-this-month",
+      title: "Three things I learned this month",
+      date: "September 30, 2026",
+      summary: "A monthly round-up is an easy habit to keep. Here's the format I'm trying.",
+      tags: ["Learning"],
+      mascot: "snail",
+      color: "mint",
+      body: [
+        "A round-up post is the easiest kind to write: list a few things you learned, and one sentence on why each one mattered.",
+        "## 1. Something technical",
+        "Describe it in plain language, as if to a friend.",
+        "## 2. Something about working with people",
+        "What happened, and what will you do differently next time?",
+        "## 3. Something surprising",
+        "The things that surprise you are often the most interesting to read about.",
+      ],
+    },
+    {
+      slug: "books-that-changed-how-i-work",
+      title: "Books that changed how I work",
+      date: "August 18, 2026",
+      summary: "Not a list of the best books ever, just the ones that actually changed my habits.",
+      tags: ["Reading"],
+      mascot: "bear",
+      color: "peach",
+      body: [
+        "Pick two or three books and, for each, write down one idea you actually started using.",
+        "That's much more useful to a reader than a summary of the whole book.",
+      ],
+    },
+  ],
+
+  // ── Projects (your portfolio) ─────────────────────────────
+  // The first project is featured on the home page.
+  // `link` sends people to another site (a demo, GitHub, a case study).
+  // Or give a project a `slug` and a `body` (written like a blog post) to
+  // give it its own page on this site.
   projects: [
     {
       title: "Project name",
       summary: "One or two sentences: the problem, what you built, and why it matters.",
       tags: ["Tag", "Another tag"],
       link: "",
+      slug: "project-name",
+      body: [
+        "## The problem",
+        "What was going on, and why did it matter?",
+        "## What I did",
+        "Walk through your approach. Show your thinking as well as the result.",
+        "## The result",
+        "What changed? Use numbers if you can, and say what you'd do differently next time.",
+      ],
     },
     {
       title: "Another project",
