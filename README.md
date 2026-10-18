@@ -48,6 +48,7 @@ python3 -m http.server 8000
 
 The site is most useful when you keep it current. A light rhythm:
 
+- **Daily:** ship one small portfolio project. In Claude Code, run `/daily-project` (the skill is in [`.claude/skills/daily-project`](.claude/skills/daily-project/SKILL.md)). It picks a scoped idea, builds it in `projects/`, writes it up, adds it to the learning log, and keeps your streak.
 - **Weekly (5 min):** add a learning log entry.
 - **Monthly:** update **Now**, goal progress, and your reading list.
 - **Quarterly:** review your goals, retire finished ones, set new ones, and add a project write-up.
